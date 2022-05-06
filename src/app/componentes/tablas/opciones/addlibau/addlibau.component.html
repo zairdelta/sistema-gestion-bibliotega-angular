@@ -1,0 +1,41 @@
+<div class="container col-md-6" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar libro-autor</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+               
+                <div class="form-group">
+                    <label for="">Libro:</label>
+
+                      <select name="miselect" [(ngModel)]="libroautor.libro_id" class="form-select" aria-label="Default select example">
+                        <option [ngValue]="null" disabled>Seleccionar libro</option>
+                        <option [value]="libro.id" *ngFor="let libro of libro">{{libro.titulo}}</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="">autor:</label>
+                    <select name="miselect" [(ngModel)]="libroautor.autor_id" class="form-select" aria-label="Default select example">
+                        <option [ngValue]="null" disabled>Seleccionar autor</option>
+                        <option [value]="autores.id" *ngFor="let autores of autores">{{autores.nombre}}</option>
+                        </select>
+                       
+                </div>
+
+                <button class="btn btn-outline-success col-md-12" style="margin-top: 20px;" (click)="Guardarlibroautor()">Guardar</button>
+                <br> <br>
+                <button class="btn btn-outline-danger col-md-12" (click)="regresarAut()">Cancelar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-6 ">
+    <div class="card card-body text-center">
+        <h3>{{libro.titulo==''?'Escribe el título':libro.titulo}}</h3>
+        <p>{{libro.descripcion==''?'escribe la descripción':libro.descripcion}}</p>
+        
+    </div>
+</div>

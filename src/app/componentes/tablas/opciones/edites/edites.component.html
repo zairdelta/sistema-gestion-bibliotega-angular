@@ -1,0 +1,30 @@
+<div class="container col-md-6" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar estante</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+               
+                <div class="form-group">
+
+                    <label for="">Seccion:</label>
+                    <input type="text" class="form-control" [(ngModel)]="estante.seccion" name="seccion">
+                </div>
+
+                <button class="btn btn-outline-success col-md-12" style="margin-top: 20px;" (click)="actualizar(estante)">Guardar</button>
+                <br> <br>
+                <button class="btn btn-outline-danger col-md-12" (click)="regresarAut()">Cancelar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-6 ">
+    <div class="card card-body text-center">
+        <h3>{{estante.numero==''?'Escribe el número':estante.numero}}</h3>
+        <p>{{estante.seccion==''?'escribe la sección':estante.seccion}}</p>
+    </div>
+</div>
+

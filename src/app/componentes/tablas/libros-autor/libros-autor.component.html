@@ -1,0 +1,36 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>LIBROS AUTORES</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>id</th>
+                        <th>Libro</th>
+                        <th>Autor</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr *ngFor="let libroautor of libroautor" class="text-center">
+                            <td>{{libroautor.id}}</td> 
+                            <td>{{libroautor.libro_id}}</td> 
+                            <td>{{libroautor.autor_id}}</td>
+                            <td>
+                                <button (click)="editarlibautor(libroautor)"class="btn btn-outline-info">Editar</button>
+                                <button (click)="deleteLibroautor(libroautor.id)" class="btn btn-outline-dark" style="margin-left: 5px;">Borrar</button>
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+              
+            </table>
+        
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-outline-dark col-md-12" (click)="nuevolibroautor()">Nuevo Libro</button>
+</div>

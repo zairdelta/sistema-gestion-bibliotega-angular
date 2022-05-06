@@ -1,0 +1,35 @@
+<div class="container col-md-6" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar editorial</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+
+                    <label for="">Nombre:</label>
+                    <input type="text" class="form-control" [(ngModel)]="editorial.nombre" name="nombre">
+                </div>
+
+                <div class="form-group">
+
+                    <label for="">Dirección:</label>
+                    <input type="text" class="form-control" [(ngModel)]="editorial.direccion" name="direccion">
+                </div>
+            
+
+                <button class="btn btn-outline-success col-md-12" style="margin-top: 20px;" (click)="GuardarEditorial()">Guardar</button>
+                <br> <br>
+                <button class="btn btn-outline-danger col-md-12" (click)="regresarAut()">Cancelar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-6 ">
+    <div class="card card-body text-center">
+        <h3>{{editorial.nombre==''?'Escribe el nombre':editorial.nombre}}</h3>
+        <p>{{editorial.direccion==''?'escribe la dirección':editorial.direccion}}</p>
+    </div>
+</div>

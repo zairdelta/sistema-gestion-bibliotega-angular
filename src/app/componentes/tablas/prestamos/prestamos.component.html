@@ -1,0 +1,38 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>PRESTAMO</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>id</th>
+                        <th>Libro</th>
+                        <th>usuario</th>
+                        <th>Fecha_salida</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr *ngFor="let prestamo of prestamo" class="text-center">
+                            <td>{{prestamo.id}}</td> 
+                            <td>{{prestamo.libro_id}}</td> 
+                            <td>{{prestamo.usuario_id}}</td>
+                            <td>{{prestamo.fecha_salida}}</td>
+                            <td>
+                                <button (click)="editarPrestamo(prestamo)"class="btn btn-outline-info">Editar</button>
+                                <button (click)="deletePrestamo(prestamo.id)" class="btn btn-outline-dark" style="margin-left: 5px;">Borrar</button>
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+              
+            </table>
+        
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-outline-dark col-md-12" (click)="nuevolibroautor()">Nuevo Libro</button>
+</div>

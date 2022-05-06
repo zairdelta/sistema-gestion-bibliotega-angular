@@ -1,0 +1,41 @@
+<div class="container col-md-6" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar prestamo</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+               
+                <div class="form-group">
+                    <label for="">Libro:</label>
+
+                    <select name="miselect0" [(ngModel)]="prestamo.libro_id" class="form-select" aria-label="Default select example">
+                        <option [ngValue]="null" disabled>Seleccionar libro</option>
+                        <option [value]="libro.id" *ngFor="let libro of libros">{{libro.titulo}}</option>
+                        </select>
+                        </div>
+                <div class="form-group">
+                    <label for="">usuario:</label>
+                    <select name="miselect" [(ngModel)]="prestamo.usuario_id" class="form-select" aria-label="Default select example">
+                        <option [ngValue]="null" disabled>Seleccionar usuario</option>
+                        <option [value]="usuario.id" *ngFor="let usuario of usuarios">{{usuario.nombre}}</option>
+                        </select>
+                       
+                </div>
+
+                <button class="btn btn-outline-success col-md-12" style="margin-top: 20px;" (click)="actualizar(prestamo)">Guardar</button>
+                <br> <br>
+                <button class="btn btn-outline-danger col-md-12" (click)="regresarAut()">Cancelar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-6 ">
+    <div class="card card-body text-center">
+        <h3>{{libros.titulo==''?'Escribe el título':libros.titulo}}</h3>
+        <p>{{usuarios.nombre==''?'escribe la descripción':usuarios.nombre}}</p>
+        
+    </div>
+</div>

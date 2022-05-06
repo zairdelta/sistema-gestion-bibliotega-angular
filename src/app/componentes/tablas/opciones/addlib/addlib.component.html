@@ -1,0 +1,52 @@
+<div class="container col-md-6" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar libro</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+
+                    <label for="">Título:</label>
+                    <input type="text" class="form-control" [(ngModel)]="libro.titulo" name="titulo">
+                </div>
+
+                <div class="form-group">
+
+                    <label for="">Descripción:</label>
+                    <input type="text" class="form-control" [(ngModel)]="libro.descripcion" name="descripcion">
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Estante:</label>
+
+                      <select name="miselect" [(ngModel)]="libro.estante_id" class="form-select" aria-label="Default select example">
+                        <option [ngValue]="null" disabled>Seleccionar estante</option>
+                        <option [value]="estante.id" *ngFor="let estante of estante">{{estante.seccion}}</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Editorial:</label>
+                    <select name="miselect" [(ngModel)]="libro.editorial_id" class="form-select" aria-label="Default select example">
+                        <option [ngValue]="null" disabled>Seleccionar editorial</option>
+                        <option [value]="editorial.id" *ngFor="let editorial of editorial">{{editorial.nombre}}</option>
+                        </select>
+                       
+                </div>
+
+                <button class="btn btn-outline-success col-md-12" style="margin-top: 20px;" (click)="Guardarlibro()">Guardar</button>
+                <br> <br>
+                <button class="btn btn-outline-danger col-md-12" (click)="regresarAut()">Cancelar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-6 ">
+    <div class="card card-body text-center">
+        <h3>{{libro.titulo==''?'Escribe el título':libro.titulo}}</h3>
+        <p>{{libro.descripcion==''?'escribe la descripción':libro.descripcion}}</p>
+        
+    </div>
+</div>
